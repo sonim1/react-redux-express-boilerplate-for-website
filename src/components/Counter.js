@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import { connect } from 'react-redux'
-import { CounterActions } from '../actions/actions'
+import { CounterActions, ADD_COUNT } from '../actions/actions'
 
 class Counter extends React.Component {
     constructor(props) {
@@ -10,7 +10,7 @@ class Counter extends React.Component {
     }
 
     click(){
-        this.props.countIncrease("ADD");
+        this.props.countIncrease(ADD_COUNT);
     }
 
     render() {
@@ -26,7 +26,7 @@ class Counter extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        countIncrease: () => dispatch(CounterActions("Add"))
+        countIncrease: () => dispatch(CounterActions(ADD_COUNT))
     }
 }
 

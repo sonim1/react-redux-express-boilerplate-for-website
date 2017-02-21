@@ -1,14 +1,12 @@
+import { ADD_COUNT } from '../actions/actions'
+
 const initialState = {
     counter : 0
 }
 
-function counterReducer(state, action){
-    if(typeof state === "undefined"){
-        return initialState;
-    }
-
+function counterReducer(state = initialState, action){
     switch (action.type) {
-        case "ADD":
+        case ADD_COUNT:
             return Object.assign( {}, state, {counter : state.counter + 1});
         default:
             return state

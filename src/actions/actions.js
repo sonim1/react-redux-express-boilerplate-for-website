@@ -1,3 +1,5 @@
+export const ADD_COUNT = 'ADD_COUNT';
+
 export function CounterActions() {
-    return { type : "ADD" };
+    return { type : ADD_COUNT };
 }

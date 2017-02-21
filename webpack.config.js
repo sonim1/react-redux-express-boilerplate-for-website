@@ -1,3 +1,6 @@
+const webpack = require('webpack');
+const path = require('path');
+
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -13,7 +16,25 @@ module.exports = {
                     presets: ['es2015', 'react']
                 }
             }
-        ]
+        ],
+        rules: [
+            {
+                enforce: 'pre',
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                include: /src/,
+                loader: 'eslint-loader'
+            }
+        ],
     },
+    plugins: [
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                eslint: {
+                    configFile: path.join(__dirname, './.eslintrc'),
+                }
+            }
+        })
+    ],
     watch: true
 }

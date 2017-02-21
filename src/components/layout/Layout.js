@@ -5,7 +5,7 @@ import Footer from './Footer'
 const Layout = (props) => {
     return (
         <div className='container text-center'>
-            <Header/>
+            <Header />
             <div>
                 {props.children}
             </div>
