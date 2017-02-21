@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
     entry: './src/index.js',
     output: {
-        path : __dirname + '/public',
+        path: __dirname + '/public',
         filename: 'bundle.js'
     },
     module: {
@@ -15,6 +15,12 @@ module.exports = {
                 query: {
                     presets: ['es2015', 'react']
                 }
+            }, {
+                test: /\.jsx$/,
+                loaders: ['babel-loader']
+            }, {
+                test: /\.html$/,
+                loader: "file?name=[name].[ext]"
             }
         ],
         rules: [
@@ -25,16 +31,14 @@ module.exports = {
                 include: /src/,
                 loader: 'eslint-loader'
             }
-        ],
+        ]
     },
-    plugins: [
-        new webpack.LoaderOptionsPlugin({
+    plugins: [new webpack.LoaderOptionsPlugin({
             options: {
                 eslint: {
-                    configFile: path.join(__dirname, './.eslintrc'),
+                    configFile: path.join(__dirname, './.eslintrc')
                 }
             }
-        })
-    ],
+        })],
     watch: true
 }

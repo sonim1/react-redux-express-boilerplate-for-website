@@ -70,7 +70,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-throw new Error("Module parse failed: E:\\sonim1_test\\sonim1-boilerplate\\react-redux-express-boilerplate-for-website\\node_modules\\eslint-loader\\index.js!E:\\sonim1_test\\sonim1-boilerplate\\react-redux-express-boilerplate-for-website\\src\\index.js Unexpected token (10:16)\nYou may need an appropriate loader to handle this file type.\n| const store = createStore(rootReducer);\n| \n| ReactDOM.render(<Provider store={store}>\n|   <App /></Provider>, document.getElementById('root'));\n| ");
+throw new Error("Module parse failed: /Users/Kendrick/Documents/_Development/ReduxDocs/boilerplate/node_modules/eslint-loader/index.js!/Users/Kendrick/Documents/_Development/ReduxDocs/boilerplate/src/index.js Unexpected token (11:4)\nYou may need an appropriate loader to handle this file type.\n| \n| ReactDOM.render(\n|     <Provider store={store}>\n|         <App />\n|     </Provider>, document.getElementById('root'));");
 
 /***/ })
 /******/ ]);
