@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react'
-import { connect } from 'react-redux'
-import { CounterActions, ADD_COUNT } from '../actions/actions'
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { CounterActions, ADD_COUNT } from '../actions/actions';
 
 class Counter extends React.Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class Counter extends React.Component {
         this.click = this.click.bind(this);
     }
 
-    click(){
+    click() {
         this.props.countIncrease(ADD_COUNT);
     }
 
@@ -20,18 +20,18 @@ class Counter extends React.Component {
                 </h2>
                 <button onClick={this.click}>Click</button>
             </div>
-        )
+        );
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        countIncrease: () => dispatch(CounterActions(ADD_COUNT))
-    }
-}
+        countIncrease: () => { dispatch(CounterActions(ADD_COUNT)); },
+    };
+};
 
 const mapStateToProps = (state) => {
     return state;
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react'
-import {Link} from 'react-router'
+import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 const Header = (props) => {
     return (
@@ -15,6 +15,6 @@ const Header = (props) => {
             </ul>
         </div>
     );
-}
+};
 
 export default Header;
