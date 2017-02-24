@@ -2,6 +2,7 @@
     "parser": "babel-eslint",
     extends: "airbnb",
     rules: {
+        linebreak-style: [0, "unix"],
         "react/prop-types": [0, { ignore: ['children'] }],
         "react/prefer-es6-class": [0, 'always'],
         arrow-body-style: ["error", "always"],
