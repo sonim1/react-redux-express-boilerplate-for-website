@@ -1,8 +1,8 @@
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory, Link } from 'react-router';
-import Layout from './layout/Layout';
-import Counter from './Counter';
-import Home from './Home';
+import Layout from '../layout/Layout';
+import Counter from './Counter/Counter';
+import Home from './Home/Home';
 
 const App = () => {
     return (
