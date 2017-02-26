@@ -36,6 +36,12 @@ module.exports = {
                     fallback: 'style-loader',
                     use: ['css-loader', 'sass-loader'],
                 }),
+            }, {
+                test: /\.(woff|woff2|eot|ttf|svg)$/,
+                loader: 'file-loader',
+                query: {
+                    name: './fonts/glyphicons-halflings-regular.[ext]',
+                },
             },
         ],
     },

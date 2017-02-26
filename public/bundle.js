@@ -13240,7 +13240,7 @@ var Counter = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     'button',
-                    { onClick: this.click },
+                    { className: 'btn btn-default', onClick: this.click },
                     'Click'
                 )
             );
@@ -13315,7 +13315,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Footer = function Footer(props) {
     return _react2.default.createElement(
         "div",
-        { className: "footer" },
+        { className: "footer navbar-fixed-bottom" },
         _react2.default.createElement(
             "h2",
             null,
@@ -13348,7 +13348,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Header = function Header(props) {
     return _react2.default.createElement(
         'div',
-        { className: 'header' },
+        { className: 'header navbar-fixed-top' },
         _react2.default.createElement(
             'h2',
             null,
@@ -13409,11 +13409,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Layout = function Layout(props) {
     return _react2.default.createElement(
         'div',
-        { className: 'container text-center' },
+        { className: 'text-center' },
         _react2.default.createElement(_Header2.default, null),
         _react2.default.createElement(
             'div',
-            null,
+            { className: 'container' },
             props.children
         ),
         _react2.default.createElement(_Footer2.default, null)

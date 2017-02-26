@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const Header = (props) => {
     return (
-        <div className="header">
+        <div className="header navbar-fixed-top">
             <h2>Header</h2>
             <ul>
                 <li>

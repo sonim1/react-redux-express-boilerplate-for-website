@@ -1,5 +1,10 @@
 // reset
 @import './base/reset';
+@import './base/base';
+
+//bootstrap
+@import './vendor/bootstrap/bootstrap';
+
 
 //layout
 @import './layout/layout';
