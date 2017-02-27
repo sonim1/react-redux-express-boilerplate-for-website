@@ -2,11 +2,27 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+process.noDeprecation = true;
+
 module.exports = {
-    entry: './src/index.js',
+    entry: [
+        'webpack-dev-server/client?http://localhost:3001',
+        'webpack/hot/only-dev-server',
+        './src/index.js',
+    ],
     output: {
-        path: path.join(__dirname, '/public'),
+        path: '/static',
         filename: 'bundle.js',
+    },
+    devServer: {
+        hot: true,
+        filename: 'bundle.js',
+        publicPath: '/static',
+        historyApiFallback: true,
+        contentBase: './public',
+        proxy: {
+            '**': 'http://localhost:3000',
+        },
     },
     resolve: {
         extensions: ['*', '.js', '.jsx'],
@@ -25,7 +41,9 @@ module.exports = {
                 exclude: /(node_module)/,
                 loader: 'babel-loader',
                 query: {
+                    cacheDirectory: true,
                     presets: ['es2015', 'stage-0', 'react'],
+                    plugins: ['react-hot-loader/babel'],
                 },
             }, {
                 test: /\.html$/,
@@ -46,6 +64,9 @@ module.exports = {
         ],
     },
     plugins: [
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.LoaderOptionsPlugin({
             options: {
                 eslint: {
@@ -56,5 +77,4 @@ module.exports = {
         }),
         new ExtractTextPlugin('./css/[name].css'),
     ],
-    watch: true,
 };
