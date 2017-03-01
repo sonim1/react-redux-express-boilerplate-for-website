@@ -1,0 +1,4 @@
+// now used webpack.dev.config.js
+{
+  "presets": ["es2015","stage-0","react"]
+}

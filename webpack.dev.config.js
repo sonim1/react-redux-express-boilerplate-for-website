@@ -6,23 +6,22 @@ process.noDeprecation = true;
 
 module.exports = {
     entry: [
+        'react-hot-loader/patch',
         'webpack-dev-server/client?http://localhost:3001',
         'webpack/hot/only-dev-server',
         './src/index.js',
     ],
+    devtool: 'inline-source-map',
     output: {
-        path: '/static',
+        path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js',
     },
     devServer: {
         hot: true,
         filename: 'bundle.js',
-        publicPath: '/static',
+        publicPath: '/',
         historyApiFallback: true,
-        contentBase: './public',
-        proxy: {
-            '**': 'http://localhost:3000',
-        },
+        contentBase: path.resolve(__dirname, 'public'),
     },
     resolve: {
         extensions: ['*', '.js', '.jsx'],
@@ -35,14 +34,13 @@ module.exports = {
                 exclude: /(node_modules)/,
                 include: /src/,
                 loader: 'eslint-loader',
-            },
-            {
+            },{
                 test: /\.js$/,
                 exclude: /(node_module)/,
                 loader: 'babel-loader',
                 query: {
-                    cacheDirectory: true,
-                    presets: ['es2015', 'stage-0', 'react'],
+                    babelrc: false,
+                    presets: [["es2015", {"modules": false}], 'stage-0', 'react'],
                     plugins: ['react-hot-loader/babel'],
                 },
             }, {

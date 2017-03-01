@@ -6,7 +6,7 @@ import Home from './Home/Home';
 
 const App = () => {
     return (
-        <Router history={browserHistory}>
+        <Router history={browserHistory} key={Math.random()}>
             <Route component={Layout}>
                 <Route path="/" component={Home} />
                 <Route path="/Counter" component={Counter} />

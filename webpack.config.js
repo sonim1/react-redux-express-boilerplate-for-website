@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+process.noDeprecation = true;
+
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -19,14 +21,10 @@ module.exports = {
                 exclude: /(node_modules)/,
                 include: /src/,
                 loader: 'eslint-loader',
-            },
-            {
+            }, {
                 test: /\.js$/,
                 exclude: /(node_module)/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015', 'stage-0', 'react'],
-                },
+                use: 'babel-loader',
             }, {
                 test: /\.html$/,
                 loader: 'file?name=[name].[ext]',
@@ -56,5 +54,5 @@ module.exports = {
         }),
         new ExtractTextPlugin('./css/[name].css'),
     ],
-    watch: true,
+    // watch: true,
 };
