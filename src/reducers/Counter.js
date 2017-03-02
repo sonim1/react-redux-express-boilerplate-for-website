@@ -1,4 +1,4 @@
-import { ADD_COUNT } from '../actions/actions';
+import { ADD_COUNT } from '../actions';
 
 const initialState = {
     counter: 0,
