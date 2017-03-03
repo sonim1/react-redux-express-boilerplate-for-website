@@ -7,7 +7,6 @@ const app = express();
 const port = 3000;
 const devPort = 3001;
 
-
 if(process.env.NODE_ENV == 'development') {
     console.log('Server is running on development mode');
 
@@ -19,13 +18,11 @@ if(process.env.NODE_ENV == 'development') {
     });
 }
 
-app.use('/static', express.static('public'));
-
-app.use('/', express.static(__dirname + '/../public'));
+app.use('/', express.static(__dirname + './../public'));
 
 app.get('*', (req, res, next) => {
     if(req.path.split('/')[1] === 'static') return next();
-    res.sendFile(path.resolve(__dirname, '../public/index.html'));
+    res.sendFile(path.resolve(__dirname, './../public/index.html'));
 });
 
 const server = app.listen(port, () => {

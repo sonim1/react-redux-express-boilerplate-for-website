@@ -13127,7 +13127,8 @@ var App = function App() {
             _reactRouter.Route,
             { component: _Layout2.default },
             _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Home2.default }),
-            _react2.default.createElement(_reactRouter.Route, { path: '/Counter', component: _Counter2.default })
+            _react2.default.createElement(_reactRouter.Route, { path: '/Counter', component: _Counter2.default }),
+            _react2.default.createElement(_reactRouter.Route, { path: '/*', component: _Home2.default })
         )
     );
 };
@@ -13232,7 +13233,7 @@ var Counter = function (_React$Component) {
     _createClass(Counter, [{
         key: 'click',
         value: function click() {
-            this.props.countIncrease(_actions.ADD_COUNT);
+            this.props.countIncrease();
         }
     }, {
         key: 'render',
@@ -13485,13 +13486,15 @@ var _reducers2 = _interopRequireDefault(_reducers);
 
 var _actions = __webpack_require__(44);
 
-var _actions2 = _interopRequireDefault(_actions);
+var actionCreators = _interopRequireWildcard(_actions);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function configureStore(initialState) {
     /* eslint-disable no-underscore-dangle, no-console*/
-    var enhancer = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__({ actionCreators: _actions2.default });
+    var enhancer = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__({ actionCreators: actionCreators });
     if (!enhancer) {
         console.warn('Install Redux DevTools Extension to inspect the app state: ', 'https://github.com/zalmoxisus/redux-devtools-extension#installation');
     }

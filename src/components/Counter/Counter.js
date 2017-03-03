@@ -6,11 +6,13 @@ class Counter extends React.Component {
     constructor(props) {
         super(props);
 
+        window.scrollTo(0, 0);
+
         this.click = this.click.bind(this);
     }
 
     click() {
-        this.props.countIncrease(ADD_COUNT);
+        this.props.countIncrease();
     }
 
     render() {

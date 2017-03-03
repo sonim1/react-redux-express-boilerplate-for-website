@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
-import actionCreators from '../actions';
+import * as actionCreators from '../actions';
 
 export default function configureStore(initialState) {
     /* eslint-disable no-underscore-dangle, no-console*/

@@ -1,9 +1,17 @@
 import React, { PropTypes } from 'react';
 
-const Home = (props) => {
-    return (
-        <div><h3>Home Contents</h3></div>
-    );
-};
+class Home extends React.Component {
+    constructor(props) {
+        super(props);
+
+        window.scrollTo(0, 0);
+    }
+
+    render() {
+        return (
+            <div><h3>Home Contents</h3></div>
+        );
+    }
+}
 
 export default Home;
