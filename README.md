@@ -87,3 +87,5 @@ You need to install devtools for time travel debugging.
 Please check the installation guide.
 
 [Redux Devtools Extension Installation Guide](https://github.com/zalmoxisus/redux-devtools-extension#installation)
+
+![Screenshot](http://cfile7.uf.tistory.com/original/24198F4058BCBA1F07C5A4)
